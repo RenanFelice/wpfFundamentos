@@ -1,0 +1,97 @@
+﻿<Window x:Class="testeWpf.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:testeWpf"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="800" Width="800">
+
+    <Border  Padding="10">
+        <StackPanel>
+            <Grid Height="40">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="2*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Button x:Name="botao1" Click="Botao1_Click" Margin="0 0 10 0" Content="botão 1" Grid.Column="0"/>
+                <Button x:Name="resetInputs" Click="ResetInputs_Click" Content="Reset Inputs" Grid.Column="1" />
+                <Button Margin="10 0 00 0" Content="botao 3" Grid.Column="2" />
+            </Grid>
+            <TextBlock 
+                HorizontalAlignment="Center"
+                Margin="0 10"
+                FontWeight="Bold"
+                FontSize="20"
+                Text="esse é um bloco de texto"/>
+            <TextBlock FontWeight="Bold" Margin="0 0 0 1" Text="Link com botão 1"/>
+            <TextBox x:Name="linkBotao1"  Padding="5"/>
+
+            <Grid Margin="0 10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Column="0">
+                    <TextBlock Text="Descrição 1"/>
+                    <TextBox IsReadOnly="True" Background="#eee" Padding="5"/>
+                </StackPanel>
+
+                <StackPanel Margin="10 0 0 0" Grid.Column="1">
+                    <TextBlock Text="Descrição 2"/>
+                    <TextBox Padding="5"/>
+                </StackPanel>
+
+            </Grid>
+
+            <TextBlock FontWeight="Bold" Margin="0 0 0 1" Text="exemplo de dropdown menu"/>
+            
+            <ComboBox x:Name="dropdownMenu" SelectionChanged="ComboBox_SelectionChanged" Padding="5">
+                <ComboBoxItem>Item 1</ComboBoxItem>
+                <ComboBoxItem>Item 2</ComboBoxItem>
+                <ComboBoxItem>Item 3</ComboBoxItem>
+                <ComboBoxItem>Item 4</ComboBoxItem>
+            </ComboBox>
+
+            <TextBlock Margin="0 10 0 0" Text="Itens selecionados no DropDown" />
+            <TextBox IsEnabled="False" x:Name="dropdownSelection" Padding="5"/>
+
+            <TextBlock FontWeight="Bold" Margin="0 10 0 1" Text="Check Box"/>
+
+
+            <Grid Background="#eee" Margin="0 5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Column="0">
+                    <CheckBox Checked="Checkbox_Checked" x:Name="checkbox1" Content="checkbox1"/>
+                    <CheckBox Checked="Checkbox_Checked" x:Name="checkbox2" Content="checkbox2"/>
+                    <CheckBox Checked="Checkbox_Checked" x:Name="checkbox3" Content="checkbox3"/>
+                    <CheckBox Checked="Checkbox_Checked" x:Name="checkbox4" Content="checkbox4"/>
+                </StackPanel>
+
+                <StackPanel Margin="10 0 0 0" Grid.Column="1">
+                    <CheckBox Checked="Checkbox_Checked" x:Name="checkbox5" Content="checkbox5"/>
+                    <CheckBox Checked="Checkbox_Checked" x:Name="checkbox6" Content="checkbox6"/>
+                    <CheckBox Checked="Checkbox_Checked" x:Name="checkbox7" Content="checkbox7"/>
+                    <CheckBox Checked="Checkbox_Checked" x:Name="checkbox8" Content="checkbox8"/>
+                </StackPanel>
+
+            </Grid>
+            <TextBlock Margin="0 10 0 0" Text="Itens selecionados no CheckBox" />
+            <TextBox IsEnabled="False" x:Name="checkboxSelection" Padding="5"/>
+
+
+            <TextBlock Margin="0 10 0 0" Text="digite algo" />
+            <TextBox TextChanged="MimicTextInput_TextChanged" x:Name="mimicTextInput" Padding="5"/>
+            <TextBox x:Name="mimicText" IsEnabled="False" Background="#eee" Margin="0 10 0 0" Padding="5"/>
+
+
+
+        </StackPanel>
+    </Border>
+</Window>
